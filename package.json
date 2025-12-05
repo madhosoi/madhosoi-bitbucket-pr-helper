@@ -1,0 +1,74 @@
+{
+    "name": "madhosoi-bitbucket-pr-helper",
+    "displayName": "MadHosoi Bitbucket PR Helper",
+    "description": "Creates and merges Bitbucket Data Center pull requests after Git push.",
+    "publisher": "madhosoi",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "SCM Providers"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "madhosoi.bitbucketPR.createPR",
+                "title": "Create Bitbucket Pull Request"
+            }
+        ],
+        "menus": {
+            "statusBar/primary": [
+                {
+                    "command": "madhosoi.bitbucketPR.createPR",
+                    "when": "gitOpenRepository",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "configuration": {
+            "type": "object",
+            "title": "Bitbucket PR Helper",
+            "properties": {
+                "madhosoi.bitbucketPRHelper.baseUrl": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Base URL"
+                },
+                "madhosoi.bitbucketPRHelper.username": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Username"
+                },
+                "madhosoi.bitbucketPRHelper.appPassword": {
+                    "type": "string",
+                    "default": "",
+                    "description": "App password"
+                },
+                "madhosoi.bitbucketPRHelper.defaultBranch": {
+                    "type": "string",
+                    "default": "main",
+                    "description": "Default branch"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "@types/node-fetch": "^2.6.2",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@types/vscode": "^1.106.1",
+        "node-fetch": "^2.6.7"
+    }
+}
