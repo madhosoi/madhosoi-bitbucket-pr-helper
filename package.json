@@ -3,6 +3,10 @@
     "displayName": "MadHosoi Bitbucket PR Helper",
     "description": "Creates and merges Bitbucket Data Center pull requests after Git push.",
     "publisher": "madhosoi",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/madhosoi/madhosoi-bitbucket-pr-helper.git"
+    },
     "version": "1.0.0",
     "engines": {
         "vscode": "^1.75.0"
