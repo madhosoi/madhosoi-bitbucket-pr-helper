@@ -38,9 +38,20 @@ async function createPullRequest() {
 
             // Add prompt to select the branch to merge
             const branches = await git.repositories[0].getBranches();
+            //const defaultSelectedIndex = branches.findIndex((b: any) => b.name === defaultBranch);
+            const quickPickItems = branches.map((b: any) => {
+                return {
+                  label: b.name,
+                  // picked: defaultSelectedIndex > -1 && b.name === defaultBranch,
+
+                };
+            });
             const selectedBranch = await vscode.window.showQuickPick(
-                branches.map((b: any) => b.name),
-                { placeHolder: 'Select the branch to merge' });
+                quickPickItems,
+                {
+                    placeHolder: 'Select the branch to merge',
+                    canPickMany: false                 
+                });
 
             if (!selectedBranch) {
                 return;
