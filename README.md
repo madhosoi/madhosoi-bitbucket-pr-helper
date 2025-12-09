@@ -11,10 +11,7 @@ Note: The `App Password` could be the actual user password or, what I recommend,
 
 There is a command `Create Bitbucket Pull Request` that will get almost all details from the current git repository and from the Settings. You will see a dropdown of the current branches to select where you want TO merge FROM the current one.
 
-<p align="center">
-<img src="images/image.png" width=75%>
-<br/>
-</p>
+![Usage](images/image.png)
 
 ## Disclaimer
 
