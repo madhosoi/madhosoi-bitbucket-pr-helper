@@ -8,7 +8,7 @@
     "url": "https://github.com/madhosoi/madhosoi-bitbucket-pr-helper.git"
     },
     "icon": "images/icon.png",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "engines": {
         "vscode": "^1.75.0"
     },

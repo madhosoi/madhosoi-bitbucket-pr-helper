@@ -15,4 +15,4 @@ There is a command `Create Bitbucket Pull Request` that will get almost all deta
 
 ## Disclaimer
 
-I created this Extension to help myself in the development and management of real Operational services and I want to share it, but I don't have time to desl with lots of issues or improvements. I will do my best to find time.
+I created this Extension to help myself in the development and management of real Operational services and I want to share it, but I don't have time to deal with issues or improvements. I will do my best to find time.
