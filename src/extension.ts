@@ -16,6 +16,7 @@ async function createPullRequest() {
         const username = config.get("username") as string;
         const appPassword = config.get("appPassword") as string;
         const defaultBranch = config.get("defaultBranch") as string;
+        const authenticationType = config.get("authenticationType") as string;
         const autoMerge = config.get("autoMerge") as boolean;
 
         if (!baseUrl || !username || !appPassword) {
@@ -57,7 +58,7 @@ async function createPullRequest() {
                 return;
             }
 
-            const client = new BitbucketClient(baseUrl, username, appPassword);
+            const client = new BitbucketClient(baseUrl, username, appPassword, authenticationType);
             const pr = await client.createPR(project, repoSlug, currentBranch!, selectedBranch);
 
             if (autoMerge) {

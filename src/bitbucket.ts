@@ -1,11 +1,14 @@
 import fetch from 'node-fetch';
 
 export class BitbucketClient {
-    constructor(private baseUrl: string, private username: string, private appPassword: string) {}
+    constructor(private baseUrl: string, private username: string, private appPassword: string, private authenticationType: string) {}
 
     private auth() {
-        const token = Buffer.from(`${this.username}:${this.appPassword}`).toString("base64");
-        return { Authorization: `Basic ${token}` };
+        var token = Buffer.from(`${this.username}:${this.appPassword}`).toString("base64");
+        if (this.authenticationType == "Bearer"){
+            token = this.appPassword;
+        }
+        return { Authorization: `${this.authenticationType} ${token}` };
     }
 
     async createPR(project: string, repoSlug: string, from: string, to: string) {
